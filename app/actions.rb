@@ -28,18 +28,16 @@ post '/contacts' do
 end
 
 put '/contacts/:id' do
-    content_type :json
-    
-    contact = Contact.find(params[:id])
-    if contact.update params[:contact]
-
-    else
-      json contact.errors.full_messages
-    end
+    @contact = Contact.find(params[:id])
+    @contact.name = (params[:name])
+    @contact.email = (params[:email])
+    @contact.phone_number = (params[:phone_number])
+    @contact.save
+    json(@contact)
 end
 
 
-delete '/contacts' do
+delete '/contacts/:id' do
     content_type :json
     contact = Contact.find(params[:id])
     if contact.destroy

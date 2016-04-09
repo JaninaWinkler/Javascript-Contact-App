@@ -6,15 +6,25 @@ $(function(){
   var $phone = $('#new-phone');
 
   var contactToString = function(contact) {
-    return 'Name: '+ contact.name +', Email: '+ contact.email +', Phone: '+ contact.phone_number;
+    return'<form class="edit" data-id="' + contact.id + '">' + 
+      'Name: ' + 
+      '<input class="input-text" type="text" name="name" value="' + contact.name + '">' +
+      ', Email: '+ 
+      '<input class="input-text" type="text" name="email" value="' + contact.email + '">' +
+      ', Phone: '+ 
+      '<input class="input-text" type="text" name="phone_number" value="' + contact.phone_number + '">' +
+      '    ' +
+      '<button class="save-contact">Save!</button>'
+      '</form>';
+
   }
 
   function addContactToDOM(contact) {
     var $newContact = $('<li>')
-      .text( contactToString(contact) );
+      .html( contactToString(contact) );
     var $deleteButton = $('<button>')
       .addClass('delete-contact')
-      .text('Delete!')
+      .text('x')
       .data('contact-id', contact.id);
     $newContact.append($deleteButton);
     $contacts.append($newContact);
@@ -33,8 +43,7 @@ $(function(){
     }
   });
 
-  $('#create-contact').on('click', function() {
-
+   $('.create-contact').on('click', function() {
     $.ajax({
       type: 'POST',
       url: '/contacts',
@@ -61,7 +70,7 @@ $(function(){
     $liToDelete = $(this).parent();
     $.ajax({
       type: 'DELETE',
-      url: '/contacts',
+      url: '/contacts/' + contactToDelete,
       data: {
         id: contactToDelete },
       success: function(contactToDelete){
@@ -73,10 +82,23 @@ $(function(){
     });
   });
 
-// TO DO: Update - store list item in a variable, replace with new list item (input from form).
-// AJAX request ... '/contacts' + contact.id
-
+  $('body').on('submit', 'form.edit', function(e) {
+    e.preventDefault();
+    var form = $(this);
+    console.log(form);
+    console.log(form.data());
+    console.log(form.serialize());
+    $.ajax({ 
+      type: 'PUT',
+      url: '/contacts/' + form.data('id'),
+      data: form.serialize(),
+      success: function(contactToDelete){
+        // $liToDelete.remove();
+      },
+      error: function() {
+        alert('error saving contact');
+      }
+    });
+  });
 
 });
-
-
