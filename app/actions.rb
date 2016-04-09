@@ -5,8 +5,8 @@ end
 get '/contacts' do
     content_type :json
     
-    contacts = Contact.all
-    contacts.to_json
+    @contacts = Contact.all
+    @contacts.to_json
 end
 
 get '/contacts/:id' do

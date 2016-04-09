@@ -1,11 +1,11 @@
 body {
-  background-image: url('CSS-Background-Image-hd-download.jpg');
-  background-repeat: repeat-y;
+  background-image: url('nina.jpg');
+  background-repeat: repeat, linear-gradient(top, #000000, #123456);
   background-size: 100%;
   list-style: none;
 }
 .container {  
-  width: 1000px;
+  width: 1400px;
   margin: auto;
 }
 ul {
@@ -47,13 +47,14 @@ button.save-contact {
   background-color: white;
 }
 
-button.create-contact {
+button.create-contact, .search-contact {
   padding:1px 5px;
   border: 1px dashed gray;
   color: gray;
   background-color: white;
   float: right;
 }
+
 
 div#create-contact {
   position: relative;
@@ -62,14 +63,28 @@ div#create-contact {
   float: right;
   color: white;
   background-color: #85766b;
-  padding: 35px 40px;
+  padding: 30px 40px;
   border-radius: 80px;
   opacity: 0.6;
-  height: 260px;
+  height: 250px;
+}
+
+div#search-contact {
+  position: relative;
+  margin-top: 30px;
+  margin-left: 0px;
+  float: right;
+  color: white;
+  background-color: #85766b;
+  padding: 35px 40px;
+  border-radius: 60px;
+  opacity: 0.6;
+  height: 170px;
 }
 
 div#all-contacts {
   margin-top: 30px;
+  margin-bottom: 50px;
   float: left;
   color: white;
   background-color: #85766b;
@@ -83,7 +98,7 @@ div#all-contacts {
   font-weight: bold;
 }
 
-.create-input-text {
+.create-input-text, .search-input-text {
   color: gray;
   font-weight: bold;
   float:right;

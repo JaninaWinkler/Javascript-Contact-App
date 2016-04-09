@@ -14,7 +14,7 @@ $(function(){
       ' Phone:  '+ 
       '<input class="input-text" type="text" name="phone_number" value="' + contact.phone_number + '">' +
       '    ' +
-      '<button class="save-contact">Save!</button>'
+      '<button class="save-contact">Update!</button>'
       '</form>';
 
   }
@@ -29,6 +29,7 @@ $(function(){
     $newContact.prepend($deleteButton);
     $contacts.prepend($newContact);
   }
+
 
   $.ajax({
     type: 'GET',
@@ -63,7 +64,6 @@ $(function(){
       }
     });
   });
-
 
   $('#contacts').on('click', '.delete-contact', function() {
     var contactToDelete = $(this).data('contact-id');
