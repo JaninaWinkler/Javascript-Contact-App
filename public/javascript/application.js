@@ -7,11 +7,11 @@ $(function(){
 
   var contactToString = function(contact) {
     return'<form class="edit" data-id="' + contact.id + '">' + 
-      'Name: ' + 
+      'Name:  ' + 
       '<input class="input-text" type="text" name="name" value="' + contact.name + '">' +
-      ', Email: '+ 
+      ' Email:  '+ 
       '<input class="input-text" type="text" name="email" value="' + contact.email + '">' +
-      ', Phone: '+ 
+      ' Phone:  '+ 
       '<input class="input-text" type="text" name="phone_number" value="' + contact.phone_number + '">' +
       '    ' +
       '<button class="save-contact">Save!</button>'
@@ -26,8 +26,8 @@ $(function(){
       .addClass('delete-contact')
       .text('x')
       .data('contact-id', contact.id);
-    $newContact.append($deleteButton);
-    $contacts.append($newContact);
+    $newContact.prepend($deleteButton);
+    $contacts.prepend($newContact);
   }
 
   $.ajax({
