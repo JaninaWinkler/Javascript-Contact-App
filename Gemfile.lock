@@ -8,6 +8,8 @@ GEM
       activemodel (= 4.2.5)
       activesupport (= 4.2.5)
       arel (~> 6.0)
+    activerecord-postgresql-adapter (0.0.1)
+      pg
     activesupport (4.2.5)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
@@ -24,6 +26,7 @@ GEM
     method_source (0.8.2)
     minitest (5.8.3)
     multi_json (1.11.2)
+    pg (0.18.4)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -75,7 +78,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord
+  activerecord-postgresql-adapter
   activesupport
+  pg
   pry
   puma
   rake
@@ -85,3 +91,6 @@ DEPENDENCIES
   sinatra-contrib
   sqlite3
   tux
+
+BUNDLED WITH
+   1.11.2
