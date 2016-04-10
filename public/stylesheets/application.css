@@ -17,8 +17,17 @@ div.page-header {
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 40% 20%;
-  padding: 20px 80px;
+  padding: 10px 80px;
   border-radius: 90px;
+  height: 200px;
+  width: 800px;
+  position: inline;
+}
+
+div#page-header-sun {
+  text-shadow: 5px 5px 5px #808080;
+  font-size: 2em;
+  float: right;
 }
 
 h1.title {
@@ -47,7 +56,7 @@ button.save-contact {
   background-color: white;
 }
 
-button.create-contact, .search-contact {
+button.create-contact {
   padding:1px 5px;
   border: 1px dashed gray;
   color: gray;
@@ -58,18 +67,20 @@ button.create-contact, .search-contact {
 
 div#create-contact {
   position: relative;
-  margin-top: 30px;
-  margin-left: 0px;
   float: right;
   color: white;
   background-color: #85766b;
-  padding: 30px 40px;
-  border-radius: 80px;
-  opacity: 0.6;
-  height: 250px;
+  margin-top: 50px;
+  padding: 15px 20px 20px 20px;
+  border-radius: 63px;
+  opacity: 0.5;
+  height: 200px;
+  width: 280px;
+  text-align: center;
+  font-weight: bold;
 }
 
-div#search-contact {
+/*div#search-contact {
   position: relative;
   margin-top: 30px;
   margin-left: 0px;
@@ -80,7 +91,7 @@ div#search-contact {
   border-radius: 60px;
   opacity: 0.6;
   height: 170px;
-}
+}*/
 
 div#all-contacts {
   margin-top: 30px;
@@ -88,9 +99,10 @@ div#all-contacts {
   float: left;
   color: white;
   background-color: #85766b;
-  padding: 20px 35px 35px 5px;
+  padding: 30px 40px;
   border-radius: 80px;
   opacity: 0.6;
+  width: 1150px;
 }
 
 .input-text {
@@ -98,7 +110,7 @@ div#all-contacts {
   font-weight: bold;
 }
 
-.create-input-text, .search-input-text {
+.create-input-text {
   color: gray;
   font-weight: bold;
   float:right;
@@ -107,6 +119,7 @@ div#all-contacts {
 form.edit {
   font: georgia;
   font-weight: bold;
+  font-size: 1.4em;
 }
 p.form-head {
   font: georgia;
